@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      width: 400px; 
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #333;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #ea577c 0%, #a8235a 100%);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .header h1 { font-size: 20px; margin-bottom: 5px; }
+    .stats { font-size: 14px; opacity: 0.9; }
+    
+    .section {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #667eea;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .tab-item {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      margin: 5px 0;
+      background: #f8f9fa;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+    
+    .tab-item input { margin-right: 10px; }
+    .tab-item img { width: 16px; height: 16px; margin-right: 8px; }
+    
+    .category-group {
+      margin: 10px 0;
+    }
+    
+    .category-name {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+    }
+    
+    .old-tab {
+      border-left: 3px solid #e74c3c;
+      background: #fee;
+    }
+    
+    .duplicate-count {
+      background: #e74c3c;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      margin-left: auto;
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+    
+    .btn-primary:hover { background: #5568d3; }
+    
+    .btn-danger {
+      background: #e74c3c;
+      color: white;
+    }
+    
+    .btn-danger:hover { background: #c0392b; }
+    
+    .btn-secondary {
+      background: #95a5a6;
+      color: white;
+    }
+    
+    .btn-secondary:hover { background: #7f8c8d; }
+    
+    .actions {
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Smart Tab Cleaner</h1>
+    <div class="stats" id="stats">Loading...</div>
+  </div>
+  
+  <!-- Duplicates Section -->
+  <div class="section" id="duplicates-section" style="display:none;">
+    <div class="section-title">
+      
+      <span>Duplicate Tabs</span>
+    </div>
+    <div id="duplicates-list"></div>
+  </div>
+  
+  <!-- Old Tabs Section -->
+  <div class="section" id="old-tabs-section" style="display:none;">
+    <div class="section-title">
+      <div class="section-title">
+      
+      <span>Old Tabs (7+ days)</span>
+</div>
+      <span>Old Tabs (7+ days)</span>
+    </div>
+    <div id="old-tabs-list"></div>
+  </div>
+  
+  <!-- Categories Section -->
+  <div class="section" id="categories-section">
+    <div class="section-title">
+      <div class="section-title">
+  
+  <span>All Tabs by Category</span>
+</div>
+      <span>All Tabs by Category</span>
+    </div>
+    <div id="categories-list"></div>
+  </div>
+  
+  <!-- Actions -->
+  <div class="actions">
+    <button id="close-duplicates" class="btn-danger" style="display:none;">
+      Close All Duplicates
+    </button>
+    <button id="close-old" class="btn-secondary" style="display:none;">
+      Close Old Tabs
+    </button>
+    <button id="close-selected" class="btn-primary">
+      Close Selected Tabs
+    </button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

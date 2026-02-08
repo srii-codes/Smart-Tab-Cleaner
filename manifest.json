@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Tab Cleaner",
+  "version": "1.0",
+  "description": "Clean up duplicate, old, and unused tabs intelligently",
+  "permissions": ["tabs", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon":{
+        "16": "icon1.png",
+        "48": "icon2.png",
+        "128": "icon3.png"
+    },
+     "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+  }
+}
