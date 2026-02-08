@@ -91,7 +91,7 @@ chrome.tabs.query({}, function(tabs) {
         html += `
           <div class="tab-item">
             <input type="checkbox" data-tab-id="${tab.id}" ${index > 0 ? 'checked' : ''}>
-            <img src="${tab.favIconUrl || 'icon16.png'}" onerror="this.src='icon16.png'">
+            <img src="${tab.favIconUrl || 'icon1.png'}" onerror="this.src='icon1.png'">
             <span>${tab.title.substring(0, 40)}${tab.title.length > 40 ? '...' : ''}</span>
           </div>
         `;
@@ -113,7 +113,7 @@ chrome.tabs.query({}, function(tabs) {
       html += `
         <div class="tab-item old-tab">
           <input type="checkbox" data-tab-id="${tab.id}" checked>
-          <img src="${tab.favIconUrl || 'icon16.png'}" onerror="this.src='icon16.png'">
+          <img src="${tab.favIconUrl || 'icon1.png'}" onerror="this.src='icon1.png'">
           <span>${tab.title.substring(0, 30)}... (${daysSinceAccess} days)</span>
         </div>
       `;
@@ -133,7 +133,7 @@ chrome.tabs.query({}, function(tabs) {
       catHTML += `
         <div class="tab-item">
           <input type="checkbox" data-tab-id="${tab.id}">
-          <img src="${tab.favIconUrl || 'icon16.png'}" onerror="this.src='icon16.png'">
+          <img src="${tab.favIconUrl || 'icon1.png'}" onerror="this.src='icon1.png'">
           <span>${tab.title.substring(0, 40)}${tab.title.length > 40 ? '...' : ''}</span>
         </div>
       `;
